@@ -49,7 +49,7 @@ void Principal::dibujar()
 
 
     // Dibujar primera barra
-    painter.drawRect(x+50, y+50+incYN1,100,altoN1);
+    painter.drawRect(x+75, y+50+incYN1,100,altoN1);
 
     // Crear un objeto color para el relleno
     QColor colorRelleno(255, 120, 0);
@@ -71,7 +71,7 @@ void Principal::dibujar()
     int incYN2 = this->incY(altoN2);
 
     // Dibujar segunda barra
-    painter.drawRect(x+170, y+50+incYN2, 100, altoN2);
+    painter.drawRect(x+200, y+50+incYN2, 100, altoN2);
 
     // Creando los colores de la tercera barra
     QColor cRellenoBarra3(255, 250, 0);
@@ -88,7 +88,7 @@ void Principal::dibujar()
     int incYN3 = this->incY(altoN3);
 
     // Dibujar tercera barra
-    painter.drawRect(x+290,y+50+incYN3,100,altoN3);
+    painter.drawRect(x+315,y+50+incYN3,100,altoN3);
 
     //dibuujar promedio
 
@@ -96,7 +96,16 @@ void Principal::dibujar()
     int altoN4 = this->getAlto(promedio);
     int incYN4 = this->incY(altoN4);
 
-    painter.drawLine(x+50,y+50+incYN4,x+400,y+50+incYN4);
+    painter.drawLine(x+50,y+50+incYN4,x+450,y+50+incYN4);
+    QColor cRellenoBarra4(155, 250, 0);
+    QColor cBordeBarra4(121, 143, 12);
+
+//Plano cartesiano
+    //linea en y
+    painter.drawLine(x+50,y+50,x+50,y+475);
+    //linea en x
+    painter.drawLine(x+25,y+450,x+475,y+450);
+
 }
 
 int Principal::getAlto(int valor)
