@@ -89,6 +89,14 @@ void Principal::dibujar()
 
     // Dibujar tercera barra
     painter.drawRect(x+290,y+50+incYN3,100,altoN3);
+
+    //dibuujar promedio
+
+    int promedio = (nota1 + nota2 + nota3) / 3;
+    int altoN4 = this->getAlto(promedio);
+    int incYN4 = this->incY(altoN4);
+
+    painter.drawLine(x+50,y+50+incYN4,x+400,y+50+incYN4);
 }
 
 int Principal::getAlto(int valor)
@@ -103,6 +111,7 @@ int Principal::incY(int alto)
 
 
 
+
 void Principal::on_actionGuardar_triggered()
 {
     QString nombreArchivo = QFileDialog::getSaveFileName(
@@ -114,6 +123,8 @@ void Principal::on_actionGuardar_triggered()
             QMessageBox::warning(this,"Guardar imagen","No se pudo guardar el archivo");
     }
 }
+
+
 
 void Principal::on_pushButton_clicked(bool checked)
 {
