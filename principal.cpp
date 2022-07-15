@@ -80,8 +80,8 @@ void Principal::dibujar()
     painter.drawRect(x+200, y+50+incYN2, 100, altoN2);
 
     // Creando los colores de la tercera barra
-    QColor cRellenoBarra3(43, 116, 108);
-    QColor cBordeBarra3(0, 197, 176);
+    QColor cRellenoBarra3(253, 67, 67);
+    QColor cBordeBarra3(122, 0, 0);
 
     // Estableciendo colores al puncel y al painter
     pincel.setColor(cBordeBarra3);
@@ -103,7 +103,7 @@ void Principal::dibujar()
     int incYN4 = this->incY(altoN4);
 
     painter.drawLine(x+50,y+50+incYN4,x+450,y+50+incYN4);
-    QColor cRellenoBarra4(155, 250, 0);
+    QColor cRellenoBarra4(253, 67, 67);
     QColor cBordeBarra4(121, 143, 12);
 
 //Plano cartesiano
@@ -111,6 +111,23 @@ void Principal::dibujar()
     painter.drawLine(x+50,y+50,x+50,y+475);
     //linea en x
     painter.drawLine(x+25,y+450,x+475,y+450);
+
+    int cont=450;
+    int as=5;
+    int divisiones=20;
+    for(int i=0;i<divisiones;i++){
+        cont=cont-(20);
+        painter.drawText(20,cont,QString::number(as));
+        painter.drawLine(45,cont,50,cont);
+        as=as+5;
+    }
+    painter.drawText(150,490,"N1");
+    painter.drawText(250,490,"N2");
+    painter.drawText(350,490,"N3");
+
+    pincel.setColor(Qt:: blue);
+    painter.setPen(pincel);
+
 
 }
 

@@ -4,7 +4,7 @@
 #include <QPainter>
 #include <QFileDialog>
 #include <QMessageBox>
-
+#include <qdebug.h>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
